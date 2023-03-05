@@ -1,8 +1,11 @@
+export default game;
+import {battle} from './battle.js';
+
 const changeState = (somethingForNow) => {
   return (value) => {
     return(state) => ({
       ...state,
-      [somethingForNow] : (stats[somethingForNow] || 0) + value
+      [somethingForNow] : (state[somethingForNow] || 0) + value
     });
   };
 };
@@ -17,3 +20,11 @@ const storeState = () => {
 }
 
 const stateControl = storeState();
+
+// states that are changing 
+// - lvl:
+// - HP:
+// - Str:
+// - Mana:
+// - Def:
+// - Exp:
