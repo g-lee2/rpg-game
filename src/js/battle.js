@@ -1,4 +1,4 @@
-export default battle;
+export default battleEnemy;
 import {changeState, storeState, stateControl} from './game.js';
 import enemies from './monsters/enemies.js';
 import characters from './classes/character.js';
@@ -31,7 +31,7 @@ const magicAttack = changeState("wingardium leviosa")(2);
 const physicalDamage = changeState("ouchy")(1);
 const physicalDamageMagic = changeState("spooky ouchy")(2);
 
-let scenario = 1
+// let scenario = 1
 
 // Link this to choose player in UI
 const selectChar = () => {
@@ -45,9 +45,14 @@ const selectChar = () => {
 
 // pulls enemy from enemies list
 const battleEnemy = () => {
-  let randomEnemy = Math.floor(Math.random() *2) == 0;
+  let randomEnemy = Math.floor(Math.random() * 2);
 
-  if (randomEnemy = )
+  if (randomEnemy === 0 ){
+    activeEnemeyName = enemies[0].type;
+  }
+  else if (randomEnemy === 1 ){
+    activeEnemeyName = enemies[1].type;
+  }
   
   // if(scenario === 1) {
   //   enemy1 = enemies[0].type;

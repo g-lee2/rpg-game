@@ -32,7 +32,6 @@ const stateControl = storeState();
 // Need function for getting and settings character and base stats
 
 window.addEventListener("load", function() {
-  document.getElementById("enemeyName") = battleEnemy.type;
   
   document.getElementById("phys-attack").onclick = function() {
     const newState = stateControl(physicalAttack);
