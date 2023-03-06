@@ -1,5 +1,5 @@
 export default game;
-import {battle} from './battle.js';
+import {battleEnemy, selectChar} from './battle.js';
 
 const changeState = (somethingForNow) => {
   return (value) => {
@@ -32,22 +32,24 @@ const stateControl = storeState();
 // Need function for getting and settings character and base stats
 
 window.addEventListener("load", function() {
+  document.getElementById("enemeyName") = battleEnemy.type;
+  
   document.getElementById("phys-attack").onclick = function() {
     const newState = stateControl(physicalAttack);
-    document.getElementById("phys-attack").innerText = `physical dmage: ${newState.physicalAttack}`;
+    document.getElementById("enemy-hp").innerText = `physical dmage: ${newState.physicalAttack}`;
   };
 
-  document.getElementById("fertilize").onclick = function() {
+  document.getElementById("magic-attack").onclick = function() {
     const newState = stateControl(growJuice);
     document.getElementById("fertilizer-val").innerText = `Fertilizer: ${newState.fertilizer}`;
   };
 
-  document.getElementById("light").onclick = function() {
+  document.getElementById("life-juice").onclick = function() {
     const newState = stateControl(photosynthesize);
     document.getElementById("light-val").innerText = `Light: ${newState.light}`;
   };
 
-  document.getElementById("waterPlant").onclick = function() {
+  document.getElementById("spirit-juice").onclick = function() {
     const newState = stateControl(hydrate);
     document.getElementById("water-val").innerText = `Water: ${newState.water}`;
   };
