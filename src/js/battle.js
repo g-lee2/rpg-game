@@ -40,7 +40,9 @@ export const selectChar = () => {
   else if (characters === "mage") {
     chosenChar = characters[0];
   }
-}
+  console.log(chosenChar);
+  return chosenChar;
+};
 
 // pulls enemy from enemies list
 export const battleEnemy = () => {
@@ -48,23 +50,35 @@ export const battleEnemy = () => {
 
   if (randomEnemy === 0 ){
     activeEnemeyName = enemies[0].type;
-    console.log(activeEnemeyName);
-    return activeEnemeyName;
   }
   else if (randomEnemy === 1 ){
     activeEnemeyName = enemies[1].type;
-    return activeEnemeyName;
   }
-  
-  // if(scenario === 1) {
-  //   enemy1 = enemies[0].type;
-  //   // startBattle();
-  // }
-  // else if (scenario === 2) {
-  //   enemy2 = enemies[1].type;
-  //   // startBattle();
-  // }
+  return activeEnemeyName;
 };
+
+  
+  
+  
+
+const calcDamage = (charDamage) => {
+  let charDamage = chosenChar.str;
+  let enemyHp = activeEnemeyName.hp;
+  return charDamage - enemyHp;
+}
+
+const attack = (activeEnemeyName) => {
+  const damage = calcDamage;
+  activeEnemeyName.takeDamage(damage);
+}
+
+const takeDamage = () => {
+  let charHp = chosenChar.hp;
+  let enemyOuch = activeEnemeyName.dmg;
+  return charHp - enemyOuch;
+}
+
+
 
 
 // // initiate battle

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script type="text/javascript" src="index.js"></script> -->
+    <script type="text/javascript" src="./js/game.js"></script>
     <link 
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
@@ -16,37 +16,80 @@
     <div class="container" id="start">
       <h1>Start Game</h1>
       <h3>choose player:</h3>
-      <span>
+      <!-- <span>
         <ol class="characterOption">
-          <button class="btn btn-outline-success" value="warrior">+</button> Warrior
+          <input type="submit" for="+" class="btn btn-outline-success" value="warrior" />
         </ol class="characterOption">
         <ol class="characterOption">
-          <button class="btn btn-outline-success" value="mage">+</button> Mage
+          <input type="submit" for="+" class="btn btn-outline-success" id="mage-btn" value="mage" />
         </ol class="characterOption">
-      </span>
-
-      
+      </span> -->
+      <form id="char-form">
+        <select id="character" name="character" class="form-select" aria-label="Default select example">
+          <option value="warrior">Warrior</option>
+          <option value="mage">Mage</option>
+        </select>
+        <button class="btn btn-outline-dark" type="submit">Submit</button>
+      </form>
 
     </div>
 
     <div class="container">
-      <h1 id="enemyName">Your Enemy:</h1>
-      <h3><div id="enemy-hp">Hp: 0</div></h3>
-      <h3><div id="attack-amount">Damg: 0</div></h3>
+      <div>
+        <h1>Your Stats:</h1>
+        <h3>
+          <div id="char-level">
+            Lvl: <span value=""></span>
+          </div>
+        </h3>
+        <h3>
+          <div id="char-hp">
+            Hp: <span value=""></span>
+          </div>
+        </h3>
+        <h3>
+          <div id="char-str">
+            Str: <span value=""></span>
+          </div>
+        </h3>
+        <h3>
+          <div id="char-mana">
+            Mana: <span value=""></span>
+          </div>
+        </h3>
+        <h3>
+          <div id="char-def">Def: 
+            <span value=""></span>
+          </div>
+        </h3>
+        <h3>
+          <div id="char-exp">
+            Exp: <span value=""></span>
+          </div>
+        </h3>
+      </div>
+      <br>
+      <div>
+        <button class="btn btn-outline-dark" id="phys-attack">Physical Attack</button>
+        <button class="btn btn-outline-dark" id="magic-attack">Magic Attack</button>
+        <button class="btn btn-outline-dark" id="life-juice">Use Life Juice</button>
+        <button class="btn btn-outline-dark" id="spirit-juice">Use Spirit Juice</button>
+        <button class="btn btn-outline-dark" id="show-state">Current Stats</button>
+      </div>
+      <br>
+      <br>
+      <div>
+        <h1 id="enemyName">Your Enemy:</h1>
+        <h3>
+          Hp:<div id="enemy-hp"></div>  
+        </h3>
+        <h3>
+          <div id="attack-amount">
+            Damage: 0<span value=""></span>
+          </div>
+        </h3>
+      </div>
 
-      <button class="btn btn-outline-dark" id="phys-attack">Physical Attack</button>
-      <button class="btn btn-outline-dark" id="magic-attack">Magic Attack</button>
-      <button class="btn btn-outline-dark" id="life-juice">Use Life Juice</button>
-      <button class="btn btn-outline-dark" id="spirit-juice">Use Spirit Juice</button>
-      <button class="btn btn-outline-dark" id="show-state">Current Stats</button>
-
-      <h1>Your Character's Stats</h1>
-      <h3><div id="char-level">Lvl: 0</div></h3>
-      <h3><div id="char-hp">Hp: 0</div></h3>
-      <h3><div id="char-str">Str: 0</div></h3>
-      <h3><div id="char-mana">Mana: 0</div></h3>
-      <h3><div id="char-def">Def: 0</div></h3>
-      <h3><div id="char-exp">Exp: 0</div></h3>
     </div>
     
 </html>
