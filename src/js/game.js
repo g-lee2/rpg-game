@@ -1,5 +1,5 @@
-// export default game;
-// import {battleEnemy, selectChar} from './battle.js';
+
+import {selectChar} from './battle.js';
 
 const changeState = (prop) => {
   return (value) => {
@@ -82,6 +82,7 @@ window.addEventListener("load", function() {
 
 function handleFormSubmission(e) {
   e.preventDefault();
-  const selectedChar = document.getElementById("character").value;
-  selectChar();
+  const selectedChar = document.querySelector("#character").value;
+  console.log(selectedChar);
+  selectChar(selectedChar);
 }

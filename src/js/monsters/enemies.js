@@ -1,6 +1,4 @@
-export default enemies;
-
-const enemies = [
+export const enemies = [
   {
     "type": "Imp",
     "hp": 20,

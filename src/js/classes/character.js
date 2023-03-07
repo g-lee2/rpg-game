@@ -1,6 +1,4 @@
-export default characters;
-
-const characters = [
+export const characters = [
   {
     "type": "mage",
     "lvl": 1,

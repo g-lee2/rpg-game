@@ -1,6 +1,6 @@
-import {changeState, storeState, stateControl} from './game.js';
-import enemies from './monsters/enemies.js';
-import characters from './classes/character.js';
+// import {changeState, storeState, stateControl} from './game.js';
+import {enemies} from './monsters/enemies.js';
+import {characters} from './classes/character.js';
 
 // states that are changing
 // Montsers:
@@ -33,14 +33,14 @@ import characters from './classes/character.js';
 // let scenario = 1
 
 // Link this to choose player in UI
-export const selectChar = () => {
-  if(characters === "warrior") {
+export const selectChar = (string) => {
+  let chosenChar;
+  if(string === "warrior") {
     chosenChar = characters[1];
   }
-  else if (characters === "mage") {
+  else if (string === "mage") {
     chosenChar = characters[0];
   }
-  console.log(chosenChar);
   return chosenChar;
 };
 
@@ -61,7 +61,7 @@ export const battleEnemy = () => {
   
   
 
-const calcDamage = (charDamage) => {
+const calcDamage = () => {
   let charDamage = chosenChar.str;
   let enemyHp = activeEnemeyName.hp;
   return charDamage - enemyHp;
